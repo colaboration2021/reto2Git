@@ -1,6 +1,5 @@
 body {
     display: grid;
-    margin-top: 10 !important;
     background-color: #8690be!important;
     padding-inline-start: 22.5%;
     padding-inline-end: 22.5%;
@@ -9,7 +8,7 @@ body {
 
 #clientContainer {
     display: flex;
-
+    margin-top: 10 !important;
     padding-top: 40px;
     padding-inline-start: 40px;
     padding-inline-end: 40px;
