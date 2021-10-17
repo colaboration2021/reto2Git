@@ -1,69 +1,81 @@
-/**
- * Author: Jair Erazo
- **/
-// end point api audience Oracle Cloud
-const endpoint = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/audience/audience"
+const url = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+let xhr = new XMLHttpRequest();
 
 // peticion GET
 function peticionget() {
-
-    $.ajax({
-        method: "GET",
-        url: endpoint,
-        datatype: "JSON",
-        success: function(data) {
-            console.log(data)
-        }
-    });
+    var settings = {
+        "url": url,
+        "method": "GET",
+        "timeout": 0,
+      };
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
 }
-// llamado a peticion GET
-peticionget()
 
 // peticion POST
 function peticionpost() {
+    let id = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age =  document.getElementById("age").value;
 
-    let id = 2;
-    let owner = "Germany";
-    let capacity = 550;
-    let category_id = 12;
-    let name = "Aula multiple";
+    var settings = {
+        "url": url,
+        "data": {"id":id,"name":name,"email":email,"age":age},
+        "method": "POST",
+        "timeout": 0,
+      };
 
-    $.post(endpoint, {
-        id: id,
-        owner: owner,
-        capacity: capacity,
-        category_id: category_id,
-        name: name
-    }, function(response) {
-        console.log(response.message);
-    });
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
 }
+
 
 // peticion PUT
 function peticionput() {
+    let id = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age =  document.getElementById("age").value;
 
-    var url = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/audience/audience";
+    var settings = {
+        "url": url,
+        "method": "PUT",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+          "id":id,
+          "name":name,
+          "email":email,
+          "age":age
+        }),
+    };
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      }); 
+}
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("PUT", url);
-
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-        }
+// peticion DELETE
+function peticiondelete() {
+    let idDelete = document.getElementById("idDelete").value;
+    var settings = {
+        "url": url,
+        "method": "DELETE",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "id": idDelete
+        }),
     };
 
-    var data = `{
-  "id": 1,
-  "owner": "Peru",
-  "capacity": 120,
-  "category_id": 13, 
-  "name": "Pablo Honey"
-}`;
-
-    xhr.send(data);
-
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
 }
