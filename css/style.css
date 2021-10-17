@@ -1,0 +1,32 @@
+body {
+    display: grid;
+    margin-top: 10 !important;
+    background-color: #8690be!important;
+    padding-inline-start: 22.5%;
+    padding-inline-end: 22.5%;
+
+}
+
+#clientContainer {
+    display: flex;
+
+    padding-top: 40px;
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+}
+
+#clientActionsContainer {
+    margin:auto;
+}
+
+#getContainer {
+    margin-bottom: 10px;
+}
+
+#clientFormContainer #messageContainer {
+    padding-bottom: 20px;
+}
+
+textarea {
+    padding-bottom: 20px;
+}

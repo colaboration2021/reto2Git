@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax Tutorial</title>
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scriptget.js"></script>
@@ -12,11 +13,15 @@
 
 <body>
 
-<div class="row">
-  <div class="col-sm-4">
+<div id="clientContainer" class="row bg-light rounded">
+  <h2>Consultar</h2>
+  <div id="getContainer" class="row-sm-4">
      <button onclick="peticionget()" class="btn btn-primary">GET</button>
+     <hr>
   </div>
-  <div class="col-sm-4">
+
+  <div id="clientFormContainer" class="row-sm-4">
+    <h2>Registro y actualizaci&oacute;n</h2>
     <label class="form-label">ID</label>
     <input id="id" type="number" min="1" class="form-control" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
             <label class="form-label">Nombre</label>
@@ -25,28 +30,36 @@
             <input id="email" type="email" class="form-control" placeholder="name@example.com">
             <label class="form-label">Edad</label>
             <input id="age" type="number" min="1" class="form-control" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">        
-        </br>
+        <br>
         <button onclick="peticionpost()" class="btn btn-primary">POST</button>
         <button onclick="peticionput()" class="btn btn-primary">PUT</button>
-        </br>
+        <br>
+        <hr>
   </div>
-  <div class="col-sm-4">
+
+  <div id="clientActionsContainer" class="row-sm-4">
+    <h2>Dar de baja</h2>    
      <label class="form-label">ID</label>
         <input type="number" id="idDelete" class="form-control" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
         </br>
         <button onclick="peticiondelete()" class="btn btn-primary">DELETE</button>
   </div>
-</div>
+  <br>
 
-<div class="row">
-<div class="col-sm-4">
-      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
- <button type="submit" class="btn btn-primary">Submit</button>
+  <div id="messageContainer" class="row bg-light rounded">
+    <div class="row-sm-4">
+      <hr>
+      <h2>Comentarios</h2>
+          <label for="exampleFormControlTextarea1" class="form-label">Dejar Comentario</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    
+      </div>
+    </div>
+    <div style="color: white;">Reto 2 colaborationTeam 2021</div>
   </div>
-  </div>
-
-
+  
 </body>
 
 </html>
