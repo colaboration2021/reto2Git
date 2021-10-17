@@ -1,10 +1,10 @@
-const endpoint = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
-let xhr = new XMLHttpRequest();
+const endpointClient = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+let xhrClient = new XMLHttpRequest();
 
 // peticion GET
 function peticionget() {
     var settings = {
-        "url": endpoint,
+        "url": endpointClient,
         "method": "GET",
         "timeout": 0,
       };
@@ -21,7 +21,7 @@ function peticionpost() {
     let age =  document.getElementById("age").value;
 
     var settings = {
-        "url": endpoint,
+        "url": endpointClient,
         "data": {"id":id,"name":name,"email":email,"age":age},
         "method": "POST",
         "timeout": 0,
@@ -41,7 +41,7 @@ function peticionput() {
     let age =  document.getElementById("age").value;
 
     var settings = {
-        "url": endpoint,
+        "url": endpointClient,
         "method": "PUT",
         "timeout": 0,
         "headers": {
@@ -64,7 +64,7 @@ function peticionput() {
 function peticiondelete() {
     let idDelete = document.getElementById("idDelete").value;
     var settings = {
-        "url": endpoint,
+        "url": endpointClient,
         "method": "DELETE",
         "timeout": 0,
         "headers": {
