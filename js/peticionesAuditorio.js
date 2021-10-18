@@ -2,36 +2,36 @@
 
 Haciendo uso de lo aprendido sobre JavaScript y HTML, se deben crear los formularios para:
 
--Creación de Auditorios.
+-Creación de Auditorios [*].
 
--Registro de Clientes.
+-Registro de Clientes [ ].
 
--Registro de mensajes.
+-Registro de mensajes [ ].
 
 Así mismo, se debe poder visualizar una lista de los elementos registrados en las tablas de:
 
--Auditorio.
+-Auditorio [ ].
 
--Clientes.
+-Clientes [ ].
 
--Mensajes.
+-Mensajes [ ].
 
 Una vez hecha la lista, cada elemento debe tener en el título un enlace para poder visualizar en una sección "detalle" los detalles de cada:
 
--Auditorio.
+-Auditorio [ ].
 
--Cliente.
+-Cliente [ ].
 
--Mensaje.
+-Mensaje [ ].
 
-Al poder ver el detalle de cada uno, se podrá editar la información que contiene (excepto el id, este no se deberá poder editar).
+Al poder ver el detalle de cada uno, se podrá editar la información que contiene [ ] (excepto el id, este no se deberá poder editar).
 
-Es necesario también crear un botón para eliminar cada Auditorio y mensaje.
+Es necesario también crear un botón para eliminar cada Auditorio y mensaje [ ].
 
 */
 
 const endpoint = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/audience/audience";
-const endpointClient = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+// const endpointClient = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
 let xhr = new XMLHttpRequest();
 
 
@@ -125,7 +125,7 @@ function peticiondelete() {
 // Cliente
 // *****************************************************************
 
-// peticion GET cliente
+/* peticion GET cliente
 function peticiongetClient() {
   var settings = {
       "url": endpointClient,
@@ -203,3 +203,5 @@ function peticiondeleteClient() {
     console.log(response);
   });
 }
+
+*/
