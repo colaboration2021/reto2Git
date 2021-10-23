@@ -1,8 +1,7 @@
 const endpointClient = "https://g8a2ec818572549-db202109242024.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
-let xhrClient = new XMLHttpRequest();
 
 // peticion GET
-function peticionget() {
+function PeticionGetClient() {
     var settings = {
         "url": endpointClient,
         "method": "GET",
@@ -14,31 +13,28 @@ function peticionget() {
 }
 
 // peticion POST
-function peticionpost() {
-    let id = document.getElementById("id").value;
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let age =  document.getElementById("age").value;
-
+function PeticionPostClient() {
+    let id = document.getElementById("idClient").value;
+    let name = document.getElementById("nameClient").value;
+    let email = document.getElementById("emailClient").value;
+    let age =  document.getElementById("ageClient").value;
     var settings = {
         "url": endpointClient,
         "data": {"id":id,"name":name,"email":email,"age":age},
         "method": "POST",
         "timeout": 0,
       };
-
       $.ajax(settings).done(function (response) {
         console.log(response);
       });
 }
 
-
 // peticion PUT
-function peticionput() {
-    let id = document.getElementById("id").value;
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let age =  document.getElementById("age").value;
+function PeticionPutClient() {
+    let id = document.getElementById("idClient").value;
+    let name = document.getElementById("nameClient").value;
+    let email = document.getElementById("emailClient").value;
+    let age =  document.getElementById("ageClient").value;
 
     var settings = {
         "url": endpointClient,
@@ -54,15 +50,14 @@ function peticionput() {
           "age":age
         }),
     };
-      
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      }); 
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    }); 
 }
 
 // peticion DELETE
-function peticiondelete() {
-    let idDelete = document.getElementById("idDelete").value;
+function PeticionDeleteClient() {
+    let idDelete = document.getElementById("idDeleteClient").value;
     var settings = {
         "url": endpointClient,
         "method": "DELETE",
@@ -74,7 +69,6 @@ function peticiondelete() {
             "id": idDelete
         }),
     };
-
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
